@@ -1,0 +1,26 @@
+{
+  "name": "eloar/psr11-gelf-php",
+  "description": "PSR11 Factories for Graylog2 PHP integration",
+  "type": "library",
+  "license": "MIT",
+  "require" : {
+    "php": "^7.0",
+    "graylog2/gelf-php": "^1.6",
+    "wshafer/psr11-monolog": "^2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0.8",
+    "php-amqplib/php-amqplib": "^2.6",
+    "ext-amqp": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PSR11GelfPHP\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PSR11GelfPHPTest\\": "tests/"
+    }
+  }
+}
