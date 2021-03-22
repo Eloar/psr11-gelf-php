@@ -1,23 +1,30 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
+use Blazon\PSR11MonoLog\ContainerAwareInterface;
+use Blazon\PSR11MonoLog\FactoryInterface;
+use Blazon\PSR11MonoLog\ServiceTrait;
 use Gelf\Transport\AmqpTransport;
-use WShafer\PSR11MonoLog\ContainerAwareInterface;
-use WShafer\PSR11MonoLog\FactoryInterface;
-use WShafer\PSR11MonoLog\ServiceTrait;
 
-// todo: JP document
+
+/**
+ * AMPQ transport factory class
+ *
+ * @see AmqpTransport
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 class AmqpTransportFactory implements FactoryInterface, ContainerAwareInterface
 {
     use ServiceTrait;
 
-    // todo: JP document
     public function __invoke(array $options)
     {
         $exchange = $this->getService($options['exchange']);
         $queue = $this->getService($options['queue']);
         return new AmqpTransport($exchange, $queue);
     }
+
 }

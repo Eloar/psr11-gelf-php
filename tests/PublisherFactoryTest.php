@@ -3,12 +3,12 @@
 namespace PSR11GelfPHPTest;
 
 
+use Blazon\PSR11MonoLog\Exception\InvalidConfigException;
 use Gelf\Publisher;
 use Gelf\Transport\UdpTransport;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use PSR11GelfPHP\PublisherFactory;
-use WShafer\PSR11MonoLog\Exception\InvalidConfigException;
 
 
 class PublisherFactoryTest extends TestCase
@@ -20,7 +20,7 @@ class PublisherFactoryTest extends TestCase
 
     protected $mockContainer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockContainer = $this->createMock(ContainerInterface::class);
         $this->mockContainer

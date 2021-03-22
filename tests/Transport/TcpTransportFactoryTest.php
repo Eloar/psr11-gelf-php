@@ -64,4 +64,5 @@ class TcpTransportFactoryTest extends TestCase
         $transport = $factory($config);
         $this->assertInstanceOf(TcpTransport::class, $transport);
     }
+
 }

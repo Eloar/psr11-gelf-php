@@ -1,18 +1,23 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
+use Blazon\PSR11MonoLog\FactoryInterface;
 use Gelf\Transport\TcpTransport;
-use WShafer\PSR11MonoLog\FactoryInterface;
 
 
-// todo: JP document
+/**
+ * Tcp transport factory class
+ *
+ * @see TcpTransport
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 class TcpTransportFactory implements FactoryInterface
 {
     use SslOptionsTraint;
 
-    // todo: JP document
     public function __invoke(array $options)
     {
         $sslOptions = isset($options['sslOptions'])? $this->buildSslOptions($options['sslOptions']) : null;
@@ -22,4 +27,5 @@ class TcpTransportFactory implements FactoryInterface
             $sslOptions
         );
     }
+
 }

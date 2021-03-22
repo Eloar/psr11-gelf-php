@@ -1,18 +1,23 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
+use Blazon\PSR11MonoLog\FactoryInterface;
 use Gelf\Transport\HttpTransport;
-use WShafer\PSR11MonoLog\FactoryInterface;
 
 
-// todo: JP document
+/**
+ * Http transport factory class
+ *
+ * @see HttpTransport
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 class HttpTransportFactory implements FactoryInterface
 {
     use SslOptionsTraint;
 
-    // todo: JP document
     public function __invoke(array $options)
     {
         $sslOptions = isset($options['sslOptions'])? $this->buildSslOptions($options['sslOptions']) : null;

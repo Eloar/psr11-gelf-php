@@ -4,12 +4,13 @@
   "type": "library",
   "license": "MIT",
   "require" : {
-    "php": "^7.0",
-    "graylog2/gelf-php": "^1.6",
-    "wshafer/psr11-monolog": "^2.1"
+    "php": "^7.1",
+    "ext-json": "*",
+    "blazon/psr11-monolog": "^4.0",
+    "graylog2/gelf-php": "^1.6"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.0.8",
+    "phpunit/phpunit": "^9.5",
     "php-amqplib/php-amqplib": "^2.6",
     "ext-amqp": "*"
   },

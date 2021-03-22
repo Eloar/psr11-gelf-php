@@ -1,16 +1,21 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
+use Blazon\PSR11MonoLog\ContainerAwareInterface;
+use Blazon\PSR11MonoLog\Exception\InvalidConfigException;
+use Blazon\PSR11MonoLog\Exception\InvalidContainerException;
+use Blazon\PSR11MonoLog\Exception\MissingConfigException;
 use Psr\Container\ContainerInterface;
-use WShafer\PSR11MonoLog\ContainerAwareInterface;
-use WShafer\PSR11MonoLog\Exception\InvalidConfigException;
-use WShafer\PSR11MonoLog\Exception\InvalidContainerException;
-use WShafer\PSR11MonoLog\Exception\MissingConfigException;
 
 
-// todo: JP document
+/**
+ * Transport factory class
+ *
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 class TransportFactory
 {
     public static function __callStatic($name, $arguments)
@@ -25,7 +30,6 @@ class TransportFactory
 
     public function __invoke(ContainerInterface $container, string $name = 'default')
     {
-        // todo: JP implement
         $config = $this->getConfigArray($container);
         if (!is_array($config['monolog'])) {
             throw new MissingConfigException('No monolog config found. Check your config');

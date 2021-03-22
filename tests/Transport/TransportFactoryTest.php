@@ -3,6 +3,8 @@
 namespace PSR11GelfPHPTest\Transport;
 
 
+use Blazon\PSR11MonoLog\Exception\InvalidConfigException;
+use Blazon\PSR11MonoLog\Exception\MissingConfigException;
 use Gelf\Transport\AmqpTransport;
 use Gelf\Transport\HttpTransport;
 use Gelf\Transport\TcpTransport;
@@ -11,8 +13,6 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use PSR11GelfPHP\Transport\TransportFactory;
 use PSR11GelfPHPTest\ConfigTrait;
-use WShafer\PSR11MonoLog\Exception\InvalidConfigException;
-use WShafer\PSR11MonoLog\Exception\MissingConfigException;
 
 
 class TransportFactoryTest extends TestCase
@@ -27,7 +27,7 @@ class TransportFactoryTest extends TestCase
     /** @var TransportFactory */
     protected $factory;
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->container = $this->createMock(ContainerInterface::class);
         $this->container

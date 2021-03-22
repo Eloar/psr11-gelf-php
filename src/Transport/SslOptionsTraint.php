@@ -1,18 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: eloar
- * Date: 25.03.19
- * Time: 15:50
- */
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
-// todo: JP document
+use Blazon\PSR11MonoLog\Exception\InvalidConfigException;
 use Gelf\Transport\SslOptions;
-use WShafer\PSR11MonoLog\Exception\InvalidConfigException;
 
+
+/**
+ * Trait for handling SSL options in transport initialization
+ *
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 trait SslOptionsTraint
 {
     protected function buildSslOptions($sslOptions)

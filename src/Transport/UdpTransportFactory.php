@@ -1,16 +1,21 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHP\Transport;
 
 
+use Blazon\PSR11MonoLog\FactoryInterface;
 use Gelf\Transport\UdpTransport;
-use WShafer\PSR11MonoLog\FactoryInterface;
 
 
-// todo: JP document
+/**
+ * Udp transport factory class
+ *
+ * @package PSR11GelfPHP\Transport
+ * @author Janusz Paszyński "Eloar"
+ */
 class UdpTransportFactory implements FactoryInterface
 {
-    // todo: jp document
+
     public function __invoke(array $options)
     {
         return new UdpTransport(

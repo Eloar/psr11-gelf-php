@@ -21,7 +21,7 @@ class AmqpTransortFactoryTest extends TestCase
     /** @var AmqpTransportFactory */
     protected $factory;
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->factory = new AmqpTransportFactory();
         $this->mockContainer = $this->createMock(ContainerInterface::class);

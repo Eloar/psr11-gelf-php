@@ -11,7 +11,7 @@ composer require Eloar/psr11-gelf-php
 
 ## Usage
 
-Below code is copied directly from [PSR-11 Monolog](https://github.com/wshafer/psr11-monolog) documentation. To use it 
+Below code is copied directly from [PSR-11 Monolog](https://gitlab.com/blazon/psr11-monolog) documentation. To use it 
 `Gelf\Publisher` has to be defined in container under `my-service` name or instance has to be provided in config (in 
 place of `my-service` key). 
 

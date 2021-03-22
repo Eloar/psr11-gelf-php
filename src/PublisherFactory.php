@@ -3,15 +3,20 @@
 namespace PSR11GelfPHP;
 
 
+use Blazon\PSR11MonoLog\Exception\InvalidConfigException;
+use Blazon\PSR11MonoLog\Exception\InvalidContainerException;
 use Gelf\MessageValidatorInterface;
 use Gelf\Publisher;
 use Gelf\Transport\TransportInterface;
 use Psr\Container\ContainerInterface;
-use WShafer\PSR11MonoLog\Exception\InvalidConfigException;
-use WShafer\PSR11MonoLog\Exception\InvalidContainerException;
 
 
-// todo: JP document
+/**
+ * Factory class for Gelf Publisher
+ *
+ * @package PSR11GelfPHP
+ * @author Janusz Paszyński
+ */
 class PublisherFactory
 {
     public static function __callStatic($name, $arguments)
@@ -25,7 +30,6 @@ class PublisherFactory
 
     public function __invoke(ContainerInterface $container, string $name = 'default')
     {
-        // todo: JP implement
         $config = $this->getConfigArray($container);
         $publisherConfig = $config['monolog']['publishers'][$name];
         return new Publisher(

@@ -2,9 +2,11 @@
 
 namespace PSR11GelfPHPTest\Transport;
 
+
 use Gelf\Transport\UdpTransport;
 use PSR11GelfPHP\Transport\UdpTransportFactory;
 use PHPUnit\Framework\TestCase;
+
 
 class UdpTransportFactoryTest extends TestCase
 {
@@ -20,4 +22,5 @@ class UdpTransportFactoryTest extends TestCase
         $transport = $factory($options);
         $this->assertInstanceOf(UdpTransport::class, $transport);
     }
+
 }

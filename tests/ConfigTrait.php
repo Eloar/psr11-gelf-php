@@ -1,15 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: eloar
- * Date: 25.03.19
- * Time: 11:52
- */
+<?php declare(strict_types=1);
 
 namespace PSR11GelfPHPTest;
 
 
-// todo: JP document
+/**
+ * Configuration trait for generating configuration array
+ *
+ * @package PSR11GelfPHPTest
+ * @author Janusz Paszyński "Eloar"
+ */
 trait ConfigTrait
 {
     public function getConfigArray() : array
@@ -70,4 +69,5 @@ trait ConfigTrait
             ]
         ];
     }
+
 }
