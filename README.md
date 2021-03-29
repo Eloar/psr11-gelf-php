@@ -1,6 +1,6 @@
 # PSR-11 Gelf PHP
 
-This library is extension for [PSR-11 Monolog](https://github.com/wshafer/psr11-monolog) library which provides similar
+This library is extension for [PSR-11 Monolog](https://gitlab.com/blazon/psr11-monolog) library which provides similar
 config diriven initialization for Gelf classes. It allows use `GelfHandler` without writing factories yourself. 
 
 ## Instalation
